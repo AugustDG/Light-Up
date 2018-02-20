@@ -18,7 +18,7 @@ namespace AMPStudios
     public AudioClip[] mainSongs; //array for all the possible songs
     public int songNumber = 0; //which song to play
 
-    private void Awake()
+    private void Start()
     {
       slider = GetComponent<Slider>(); //assigns the slider variable to the Slider component
 
@@ -31,7 +31,7 @@ namespace AMPStudios
         slider.value = PlayerPrefs.GetFloat("AudioLevel"); //and if yes, gets the saved value and assigns to the slider
       }
 
-      audioSource.volume = slider.value; //sets the volume of the audio to the value of the slider
+      audioSource.volume = slider.value/10; //sets the volume of the audio to the value of the slider
 
       PlayerPrefs.Save(); //saves all modifications
     }

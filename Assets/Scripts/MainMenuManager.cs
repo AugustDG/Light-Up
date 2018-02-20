@@ -20,7 +20,7 @@ namespace AMPStudios
     bool isMENU = true; //holds the state of the main menu
     [SerializeField] bool isOptions; //holds the state of the options menu
     [SerializeField] bool isCredits; //holds the state of the credits menu
-    bool isQuitOpen; //holds the state of the quit menu
+    [SerializeField] bool isQuitOpen; //holds the state of the quit menu
 
     void Awake()
     {
@@ -67,16 +67,16 @@ namespace AMPStudios
 
       if (!isOptions && !isCredits)
       {
-        if (swipeControls.swipeUp)
+        if (!isQuitOpen)
         {
-          if (!isQuitOpen)
+          if (swipeControls.swipeUp)
           {
             ButtonQuit();
           }
         }
-        else if (swipeControls.swipeDown)
+        else if (isQuitOpen)
         {
-          if (isQuitOpen)
+          if (swipeControls.swipeDown)
           {
             ButtonQuit();
           }
@@ -108,9 +108,11 @@ namespace AMPStudios
       if (SceneManager.sceneCount == 2) //disables and enables the virtual camera according to the current playing scene
       {
         virtualCamera.gameObject.SetActive(false);
+        Camera.main.orthographicSize = 5;
       }else
       {
         virtualCamera.gameObject.SetActive(true);
+        Camera.main.orthographicSize = 10;
       }
     }
 
@@ -137,7 +139,7 @@ namespace AMPStudios
     #region Quit Mechanics
     public void ButtonQuit()
     {
-      isQuitOpen = !isQuitOpen;
+      isQuitOpen = !isQuitOpen; // inverses the state of the credits menu
       isQUIT = !isQUIT; //switches the state of the quit menu
 
       Animator.SetBool("isQUIT", isQUIT); //changes the according animator parameters to enable or disable the menu by animation
@@ -151,6 +153,7 @@ namespace AMPStudios
 
     public void NoQuit()
     {
+      isQuitOpen = !isQuitOpen; // inverses the state of the credits menu
       isQUIT = !isQUIT; //switches the state of the quit menu
 
       Animator.SetBool("isQUIT", isQUIT); //changes the according animator parameters to enable or disable the menu by animation

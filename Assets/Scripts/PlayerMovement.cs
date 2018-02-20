@@ -25,8 +25,8 @@ namespace AMPStudios
 
       if (transform.position.z > 10)
       {
-        desiredPosition = Vector3.zero;
-        transform.position = Vector3.zero;
+        desiredPosition = new Vector3(0, 1, -1);
+        transform.position = new Vector3(0, 1, -1);
       }
     }
   }
