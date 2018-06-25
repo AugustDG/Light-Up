@@ -5867,7 +5867,6 @@ GameObject:
   - component: {fileID: 1761503418}
   - component: {fileID: 1761503419}
   - component: {fileID: 1761503420}
-  - component: {fileID: 1761503421}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -5993,23 +5992,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &1761503421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1761503414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7d7536e76b76bc4484de68fef19b96f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tap: 0
-  swipeLeft: 0
-  swipeRight: 0
-  swipeUp: 0
-  swipeDown: 0
-  swipeDelta: {x: 0, y: 0}
 --- !u!1 &1762930431
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,6 +6437,7 @@ GameObject:
   - component: {fileID: 1798301684}
   - component: {fileID: 1798301683}
   - component: {fileID: 1798301687}
+  - component: {fileID: 1798301688}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6557,6 +6540,30 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1798301688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798301682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc98219a83dff145947365dc914d06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TapThreshold: 0.5
+  SwipeThreshold: 50
+  ReferenceDpi: 200
+  GuiLayers:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  RecordFingers: 0
+  RecordThreshold: 5
+  RecordLimit: 10
+  SimulateMultiFingers: 1
+  PinchTwistKey: 306
+  MultiDragKey: 308
+  FingerTexture: {fileID: 0}
 --- !u!1001 &1813010797
 Prefab:
   m_ObjectHideFlags: 0
@@ -8171,6 +8178,26 @@ Prefab:
     - target: {fileID: 1000012882023006, guid: 5ca4c580b3888314581688fa46fb142d, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011337858710, guid: 5ca4c580b3888314581688fa46fb142d,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 30.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011337858710, guid: 5ca4c580b3888314581688fa46fb142d,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 30.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011337858710, guid: 5ca4c580b3888314581688fa46fb142d,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 30.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011337858710, guid: 5ca4c580b3888314581688fa46fb142d,
+        type: 2}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 30.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198000011337858710, guid: 5ca4c580b3888314581688fa46fb142d,
         type: 2}
