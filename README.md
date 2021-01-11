@@ -1,3 +1,1 @@
 # Light Up
-
-## Hello!
